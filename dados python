@@ -1,0 +1,28 @@
+dados = {}
+
+def cadastro_pessoa():
+    nome = input("Digite seu nome: ")
+    cpf = int(input("Digite seu CPF: "))
+    local = input("Local que deseja receber o documento: ")
+    dados[nome] = cpf, local
+    print("Cadastro feito com sucesso.")
+
+def dados_cadastro():
+    print("Dados armazenados:")
+    for nome, (cpf, local) in dados.items():
+        print(f"Nome: {nome} | CPF: {cpf} | Local: {local}")
+
+
+while True:
+    print("Nosso menu:")
+    print(" 1 - Cadastro")
+    print(" 2 - Cadastro de dados")
+
+    opcao = input("Como podemos ajudar? ")
+
+    if opcao == "1":
+        cadastro_pessoa()
+    elif opcao == "2":
+        dados_cadastro()
+    else:
+        break
